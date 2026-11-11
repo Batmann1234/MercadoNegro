@@ -1,0 +1,26 @@
+name: MercadoNegro
+version: 1.0.0
+main: com.mercadonegro.MercadoNegroPlugin
+api-version: "1.21"
+description: Subasta por apuestas programada con ítems de MythicMobs
+depend: [Vault, MythicMobs]
+softdepend: [Essentials]
+
+commands:
+  mercadonegro:
+    description: Administración de la subasta
+    usage: /<command> <idItem> <precioBase> | start | cancel | info | reload | preview [segundos] | mini <idItem> <precio> [minutos]
+    permission: mercadonegro.admin
+    aliases: [mn]
+  subasta:
+    description: Abre el menú de la subasta activa
+    usage: /<command>
+    permission: mercadonegro.use
+
+permissions:
+  mercadonegro.admin:
+    description: Preparar, iniciar y cancelar la subasta
+    default: op
+  mercadonegro.use:
+    description: Abrir el menú y apostar
+    default: true

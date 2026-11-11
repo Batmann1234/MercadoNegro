@@ -1,0 +1,81 @@
+prefix: "&8[&4MercadoNegro&8] &7"
+
+gui:
+  title: "&4&lMercado Negro"
+  mini-title: "&6&lMini Mercado Negro"
+  lore:
+    - "&8&m                      "
+    - "&7Precio base: &6{base}"
+    - "&7Apuesta actual: &e{top}"
+    - "&7Líder: &f{leader}"
+    - "&7Tiempo restante: &c{time}"
+    - ""
+    - "&a&lClic para apostar"
+
+broadcast:
+  open: "¡La subasta ha comenzado! Ítem: &6{item}&7 — Base: &6{base}&7 — Dura &c{duration}&7. Usa &e/subasta&7."
+  new-leader: "&f{player}&7 lidera con &e{amount}&7 por &6{item}&7."
+  winner: "&a{player}&7 ganó &6{item}&7 con una apuesta final de &e{amount}&7."
+  no-bids: "Nadie apostó por &6{item}&7. Subasta cancelada."
+  cancelled: "La subasta de &6{item}&7 fue cancelada. Se reembolsó la apuesta líder."
+  error: "&cLa subasta se canceló por un error interno. Apuestas reembolsadas."
+
+bid:
+  prompt: "Escribe tu apuesta en el chat (ej: &e10m&7, &e1.5b&7, &e10000000&7). Mínimo: &6{min}&7. Escribe &ccancelar&7 para salir."
+  timeout: "&cSe agotó el tiempo para apostar."
+  cancelled: "&7Apuesta cancelada."
+  already-pending: "&cYa estás apostando: escribe el monto en el chat."
+  invalid: "&cMonto inválido. Usa formatos como 10m, 1.5b o 10000000."
+  too-low: "&cDebes superar la apuesta actual de &e{current}&c."
+  below-base: "&cLa apuesta mínima es el precio base: &e{base}&c."
+  insufficient: "&cSaldo insuficiente. Necesitas &e{needed}&c."
+  economy-error: "&cNo se pudo procesar el pago. No se descontó nada."
+  accepted: "&aApuesta de &e{amount}&a registrada. ¡Eres el líder!"
+  outbid: "&cTu apuesta de &e{amount}&c fue superada. Tu dinero fue reembolsado."
+
+result:
+  you-won: "&a¡Ganaste &6{item}&a! Se descontaron &e{amount}&a."
+  delivered-pending: "&aRecibiste tu ítem pendiente: &6{item}"
+  refund-delivered: "&aSe te reembolsó &e{amount}&a pendiente."
+
+error:
+  no-active: "&cNo hay ninguna subasta activa."
+  no-permission: "&cNo tienes permiso."
+  players-only: "&cSolo jugadores."
+
+admin:
+  usage: "&c/mercadonegro <idItem> <precioBase> &7| &c/mercadonegro start|cancel|info|reload|preview|mini"
+  prepared: "&aSubasta preparada: &f[{item}] &7— precio base &6{base}"
+  invalid-price: "&cPrecio inválido (ej: 300m, 1b, 10000000)."
+  item-not-found: "&cEl ítem de MythicMobs '{item}' no existe."
+  already-active: "&cYa hay una subasta activa."
+  not-prepared: "&cNo hay ítem preparado. Usa /mercadonegro <idItem> <precioBase>."
+  started: "&aSubasta iniciada manualmente."
+  cancelled: "&aSubasta cancelada."
+  reloaded: "&aConfiguración recargada."
+  info-prepared: "Preparado: &f{prepared}"
+  info-active: "Activa: &f{item} &7| Tiempo: &c{time} &7| Líder: &f{leader} &7| Apuesta: &e{top}"
+  info-none: "No hay subasta activa."
+
+test:
+  tag: "&e&l[PRUEBA] &r"
+  diag-title: "&e&l--- Diagnóstico MercadoNegro ---"
+  diag-ok: "&a✔ &f{name}&7: {detail}"
+  diag-fail: "&c✘ &f{name}&7: &c{detail}"
+  started: "&eSimulación iniciada ({seconds}s). Sin dinero real, sin entrega de ítem y los mensajes solo los ves tú. Aparecerán Bot_Alfa y Bot_Beta apostando. Usa &f/subasta&e para pujar tú. &f/mercadonegro cancel&e la detiene."
+  would-win: "&e¡Habrías ganado &6{item}&e! En la simulación no se descontó nada ni se entregó el ítem."
+  would-be-insufficient: "&eCon tu saldo real esto sería &cSaldo insuficiente&e (necesitarías {needed}). En la simulación se permite igual."
+  finished: "&eSimulación terminada. Revisa la consola por si hubo errores."
+  cancelled: "&eSimulación cancelada."
+  invalid-seconds: "&cUsa un número de segundos entre 15 y 600. Ej: /mercadonegro preview 60"
+
+mini:
+  open: "&6&l¡MINI Mercado Negro! &7Ítem: &6{item}&7 — Base: &6{base}&7 — Dura &c{duration}&7. Usa &e/subasta&7. (No es el evento del viernes)"
+  new-leader: "&6[Mini] &f{player}&7 lidera con &e{amount}&7 por &6{item}&7."
+  winner: "&6[Mini] &a{player}&7 ganó &6{item}&7 con una apuesta final de &e{amount}&7."
+  no-bids: "&6[Mini] &7Nadie apostó por &6{item}&7. Mini mercado cancelado."
+  cancelled: "&6[Mini] &7El mini mercado de &6{item}&7 fue cancelado. Se reembolsó la apuesta líder."
+  started: "&aMini mercado anunciado: &f[{item}] &7— base &6{base}&7 — dura &c{duration}&a. El evento del viernes no se ve afectado."
+  usage: "&c/mercadonegro mini <idItem> <precioBase> [minutos]"
+  invalid-minutes: "&cLos minutos deben estar entre 1 y 30."
+  too-close: "&cNo se puede abrir: se solaparía con la apertura programada del Mercado Negro. Usa una duración menor o espera."

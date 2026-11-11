@@ -1,0 +1,19 @@
+# Mundo donde se difunden los mensajes (solo ese mundo los recibe)
+world: "SpawnNuevo"
+
+# Zona horaria fija UTC-6 (sin horario de verano). No usa la hora del servidor.
+timezone: "UTC-06:00"
+
+schedule:
+  day: FRIDAY      # MONDAY..SUNDAY
+  hour: 18         # 0-23
+  minute: 0        # 0-59
+
+duration-seconds: 300        # duración de la subasta (5 min)
+preview-duration-seconds: 60 # duración de /mercadonegro preview (15-600)
+mini-duration-seconds: 180   # duración por defecto de /mercadonegro mini (30-1800)
+bid-timeout-seconds: 30      # tiempo para escribir el monto en el chat
+max-bid: 1000000000000000    # tope de seguridad (máx. 1e15)
+
+# Si es true, el ítem preparado se borra al terminar la subasta.
+clear-prepared-after-auction: true
